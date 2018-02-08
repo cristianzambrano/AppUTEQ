@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'MyAndoirdKey'
+            keyPassword 'lncdj2.A2'
+            storeFile file('D:/8SEMESTRE-MATERIAS/PI_8V0/Versiones de App UTEQ/Comercial/android.jks')
+            storePassword 'lncdj2.A'
+        }
+    }
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+    defaultConfig {
+        applicationId "com.uteq.uteqdevelopers.noticiasuteq"
+        minSdkVersion 21
+        targetSdkVersion 23
+        versionName '1.2'
+        signingConfig signingConfigs.config
+        versionCode 3
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+            renderscriptDebuggable false
+        }
+        debug {
+            debuggable true
+            signingConfig signingConfigs.config
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+    compile 'com.android.support:cardview-v7:23.4.0'
+    compile 'com.android.support:recyclerview-v7:23.4.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.daimajia.slider:library:1.1.5@aar'
+    compile 'com.github.chrisbanes:PhotoView:1.2.6'
+    compile 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
+    compile 'com.ogaclejapan.smarttablayout:utils-v4:1.6.1@aar'
+    compile 'com.google.firebase:firebase-messaging:9.6.0'
+}
+
+apply plugin: 'com.google.gms.google-services'
+
+
+
+
+
+
+ 
